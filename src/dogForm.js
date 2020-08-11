@@ -32,7 +32,60 @@ class DogForm extends Component {
                   </Form.Group>
 
                   <Form.Row>
-                    
+                    <Form.Group as={Col} contolId='FormGridBreed'>
+                      <Form.Label>Breed</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={breed}
+                        onChange={this.setBreed}
+                      >
+                        <option>Choose...</option>
+                        <option>German Shepherd</option>
+                        <option>Dachshund</option>
+                        <option>Norwegian Elkhound</option>
+                        <option>Redbone</option>
+                      </Form.Control>
+                    </Form.Group>
+                    <Form.Group
+                      as={Col}
+                      controlId="FormGridColor"
+                    >
+                      <Form.Label>Color</Form.Label>
+                      <Form.Control placeholder="Enter Color" />
+                    </Form.Group>
+                  </Form.Row>
+
+                  <Form.Row>
+                    <Form.Group as={Col} controlId="FormGridSex">
+                      <Form.Label>Sex</Form.Label>
+                      <Form.Check 
+                        type="radio"
+                        label="Male"
+                        name="formHorizRadios1"
+                        ids="formHorizRadios1"
+                      />
+                      <Form.Check 
+                        type="radio"
+                        label="Female"
+                        name="formHorizRadios1"
+                        ids="formHorizRadios1"
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="FormGridAltered">
+                      <Form.Label>Altered</Form.Label>
+                      <Form.Check 
+                        type="radio"
+                        label="Yes"
+                        name="formHorizRadios2"
+                        ids="formHorizRadios2"
+                      />
+                      <Form.Check 
+                        type="radio"
+                        label="No"
+                        name="formHorizRadios2"
+                        ids="formHorizRadios2"
+                      />
+                    </Form.Group>
                   </Form.Row>
 
                 </Form>
