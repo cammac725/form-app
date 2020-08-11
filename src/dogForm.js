@@ -4,7 +4,51 @@ import logo from './zenva-academy.png';
 import React, { Component } from 'react'
 
 class DogForm extends Component {
+
+  state = {
+    name: '',
+    breed: '',
+    date: '',
+  };
+
+  setName = e => {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  setBreed = e => {
+    this.setState({
+      breed: e.target.value
+    });
+  }
+
+  setDate = e => {
+    this.setState({
+      date: e.target.value
+    });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const {
+      name,
+      date,
+    } = this.state;
+
+    alert(`Appointment created for ${name}
+    On ${date}
+    `);
+  }
+
   render() {
+
+    const {
+      name,
+      breed,
+      date,
+    } = this.state;
+
     return (
       <div>
         <br/>
@@ -12,6 +56,9 @@ class DogForm extends Component {
           <Row>
             <Col md={{span: 7, offset: 3}}>
               <Jumbotron>
+                <img width={100} src={logo} alt='logo' />
+                <br/>
+                <br/>
                 <p>Are you or your pet new to our shop? Please fill out this simple form with as much of your information as you can provide, and it will be sent directly to us in preparation for your first appointment.</p>
                 <Form onSubmit={this.handleSubmit}>
 
@@ -87,6 +134,22 @@ class DogForm extends Component {
                       />
                     </Form.Group>
                   </Form.Row>
+
+                  <Form.Group>
+                    <Form.Label>Does your dog have any known allergies or reactions to any vaccines or medications?</Form.Label>
+                    <Form.Control as='textarea' rows='3' />
+                  </Form.Group>
+
+                  <Form.Group>
+                    <Form.Label>Schedule Appointment</Form.Label>
+                    <Form.Control 
+                      type='date'
+                      value={date}
+                      onChange={this.setDate}
+                    />
+                  </Form.Group>
+
+                  <Button variant="primary" type="submit">Submit</Button>
 
                 </Form>
               </Jumbotron>
