@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
-import CatForm from './catForm';
+import Pet from './FormApp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CatForm />
+    <Pet />
   </React.StrictMode>,
   document.getElementById('root')
 );
