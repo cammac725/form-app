@@ -4,7 +4,6 @@ import logo from './zenva-academy.png';
 import DogForm from './dogForm';
 import CatForm from './catForm';
 
-
 class Pet extends Component {
   constructor(props) {
     super(props);
